@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'gcc'
+            args '-u root' 
+        }
+    }
 
     stages {
         stage('Build') {
